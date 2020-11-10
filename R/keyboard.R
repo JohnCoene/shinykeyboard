@@ -8,8 +8,8 @@
 #' @import htmlwidgets
 #'
 #' @export
-#' @example play()
-play <- function(message, width = NULL, height = NULL, elementId = NULL,
+#' @example keyboard()
+keyboard <- function(message, width = NULL, height = NULL, elementId = NULL,
                  color_palette = "sharla1", selected = NULL) {
 
   # forward options using x
@@ -51,7 +51,7 @@ play <- function(message, width = NULL, height = NULL, elementId = NULL,
 
   # create widget
   htmlwidgets::createWidget(
-    name = 'play',
+    name = 'keyboard',
     x,
     width = width,
     height = height,
@@ -59,4 +59,9 @@ play <- function(message, width = NULL, height = NULL, elementId = NULL,
     elementId = elementId
   )
 
+}
+
+keyboard_html <- function(...){
+  file <- system.file("svgs/keyboard.svg", package = "shinykeyboard")
+  htmltools::tags$img(src = file, ...)
 }

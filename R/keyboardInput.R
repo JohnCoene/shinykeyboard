@@ -35,10 +35,10 @@ keyboardInput <- function(
   text_color = colorlist[[color_palette]][["text_color"]]
 
   keyboard_options <- list(
-    tags$input(id=paste0(inputId, "_switch"),
+    htmltools::tags$input(id=paste0(inputId, "_switch"),
                class="toggle-button",
                type="checkbox"),
-    html = HTML(glue::glue(keyboard_string))
+    html = htmltools::HTML(glue::glue(keyboard_string))
     )
 
   htmltools::tagList(
@@ -50,7 +50,7 @@ keyboardInput <- function(
       script  = "shinykeyboard.js",
       stylesheet = "styles.css"
     ),
-    tags$div(
+    htmltools::tags$div(
       # change this to use our css
       class = "shinykeyboard",
       id = inputId,

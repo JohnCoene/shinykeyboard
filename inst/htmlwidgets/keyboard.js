@@ -1,6 +1,6 @@
 HTMLWidgets.widget({
 
-  name: 'play',
+  name: 'keyboard',
 
   type: 'output',
 
